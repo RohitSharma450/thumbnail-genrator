@@ -1,7 +1,6 @@
 import React from "react";
 import type { ThumbnailStyle } from "../assets/assets";
 import {
-  ChevronDown,
   ChevronDownIcon,
   CpuIcon,
   ImageIcon,
