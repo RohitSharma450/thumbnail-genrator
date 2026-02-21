@@ -9,19 +9,19 @@ import MyGeneration from "./pages/MyGenration";
 import Login from "./components/Login";
 
 export default function App() {
-    return (
-        <>
-            <LenisScroll />
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/generate" element={<Generate />} />
-                <Route path="/my-generation/:id" element={<MyGeneration />} />
-                <Route path="/about" element={<HomePage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/contact" element={<HomePage />} />
-            </Routes>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <LenisScroll />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/generate" element={<Generate />} />
+        <Route path="/my-generation/:id" element={<MyGeneration />} />
+        <Route path="/about" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<HomePage />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 }
