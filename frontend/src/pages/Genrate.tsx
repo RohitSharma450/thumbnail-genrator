@@ -25,7 +25,7 @@ const Generate = () => {
   const [colorSchemeId, setColorSchemeId] = useState<string>(
     colorSchemes[0].id,
   );
-  const [style, setStyle] = useState<IThumbnail>("Bold and Vibrant");
+  const [style, setStyle] = useState<IThumbnail | string>("Bold and Vibrant");
 
   const [styleDropDownOpen, setStyleDropDownOpen] = useState(false);
 

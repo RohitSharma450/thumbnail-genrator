@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SoftBackDrop from "../components/SoftBackDrop";
 import { dummyThumbnails, type IThumbnail } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
-import { ArrowUpRight, Download, DownloadIcon, TrashIcon } from "lucide-react";
+import { ArrowUpRight, DownloadIcon, TrashIcon } from "lucide-react";
 
 const MyGeneration = () => {
   const navigate = useNavigate();
