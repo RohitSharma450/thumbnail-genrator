@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import {
   colorSchemes,
+  dummyThumbnails,
   type AspectRatio,
   type IThumbnail,
 } from "../assets/assets";
@@ -27,6 +28,27 @@ const Generate = () => {
   const [style, setStyle] = useState<IThumbnail>("Bold and Vibrant");
 
   const [styleDropDownOpen, setStyleDropDownOpen] = useState(false);
+
+  const handleGenrate = async () => {};
+
+  const fetchThumbnail = async () => {
+    if (id) {
+      const thumbnail: any = dummyThumbnails.find((t) => t._id === id);
+      setThumbnail(thumbnail);
+      setAdditionalInfo(thumbnail.user_prompt);
+      setTitle(thumbnail.title);
+      setColorSchemeId(thumbnail.colorScheme);
+      setAspectRatio(thumbnail.aspectRatio);
+      setStyle(thumbnail.style);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (id) {
+      fetchThumbnail();
+    }
+  }, [id]);
 
   return (
     <>
@@ -103,7 +125,11 @@ const Generate = () => {
                   </div>
                 </div>
                 {!id && (
-                  <button className="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 px-4 rounded-lg transition-colors duration-200">
+                  <button
+                    type="button"
+                    onClick={handleGenrate}
+                    className="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 px-4 rounded-lg transition-colors duration-200"
+                  >
                     {loading ? "Generating..." : "Generate Thumbnail"}
                   </button>
                 )}
